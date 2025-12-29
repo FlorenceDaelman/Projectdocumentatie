@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lost in Tra(i)nslation - Journey</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Syne:wght@600;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'space': ['Space Grotesk', 'sans-serif'],
+            'syne': ['Syne', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    body {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%);
+      background-size: 400% 400%;
+      animation: gradientShift 15s ease infinite;
+    }
+
+    .dark body {
+      background: linear-gradient(135deg, #0f0c29 0%, #302b63 25%, #24243e 50%, #0f0c29 75%, #302b63 100%);
+      background-size: 400% 400%;
+      animation: gradientShift 15s ease infinite;
+    }
+
+    /* Week cards - VOLLEDIG WIT in light mode */
+    .week-card {
+      background: #ffffff;
+    }
+
+    /* Week titles - ZWART in light mode */
+    .week-card-title {
+      color: #000000 !important;
+    }
+
+    .dark .week-card {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .dark .week-card-title {
+      color: #ffffff !important;
+    }
+  </style>
+</head>
+<body class="font-space min-h-screen overflow-x-hidden">
+
+  <!-- Theme Toggle -->
+  <button onclick="toggleTheme()" 
+          class="fixed top-[30px] right-[30px] z-[1000] bg-white border-0 w-[60px] h-[60px] rounded-full text-2xl cursor-pointer shadow-[0_5px_20px_rgba(0,0,0,0.2)] transition-all duration-300 hover:scale-110 hover:rotate-[20deg] dark:bg-white/10 dark:backdrop-blur-md dark:text-white">
+    🌙
+  </button>
+
+  <div class="max-w-[1200px] mx-auto px-5 py-10">
+
+    <!-- Hero Section -->
+    <div class="text-center mb-[60px] relative">
+      <h1 class="font-syne text-[clamp(2.5rem,6vw,4.5rem)] font-extrabold text-white drop-shadow-[4px_4px_0px_rgba(0,0,0,0.2)] mb-5 tracking-[-2px] leading-[1.1]">
+        Lost in<br>Tra(i)nslation
+      </h1>
+
+      <!-- Download Button -->
+      <div class="my-[50px] mx-auto text-center max-w-[500px]">
+        <a href="PROJECTDOCUMENTATIE.zip" download 
+           onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 15px 50px rgba(102, 126, 234, 0.8)';" 
+           onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 35px rgba(102, 126, 234, 0.6)';"
+           class="inline-flex items-center justify-center py-[22px] px-[50px] bg-gradient-to-r from-[#667eea] to-[#764ba2] text-white no-underline rounded-[15px] text-[1.15rem] font-bold tracking-[2px] shadow-[0_10px_35px_rgba(102,126,234,0.6)] uppercase w-full transition-all duration-300">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="mr-[15px] flex-shrink-0">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          PROJECTDOCUMENTATIE
+        </a>
+      </div>
+    </div>
+
+    <!-- Weeks List -->
+    <div class="flex flex-col gap-5 mb-[60px]">
+
+      <a href="week1.html" class="week-card relative overflow-hidden rounded-[15px] py-[35px] px-[45px] transition-all duration-300 ease-in-out cursor-pointer shadow-[0_5px_20px_rgba(0,0,0,0.1)] no-underline flex items-center gap-[25px] hover:translate-x-[10px] hover:shadow-[0_8px_30px_rgba(0,0,0,0.2)] before:content-[''] before:absolute before:left-0 before:top-0 before:w-[6px] before:h-full before:bg-gradient-to-b before:from-[#f093fb] before:to-[#4facfe] md:py-[30px] md:px-[35px] md:gap-[15px]">
+        <div class="font-syne text-[2.5rem] font-extrabold text-[#667eea] min-w-[80px] opacity-40 dark:text-[#4facfe] md:text-[2rem] md:min-w-[60px]">01</div>
+        <div class="week-card-title text-[1.4rem] font-semibold flex-1 md:text-[1.1rem]">Low-fi prototypes</div>
+      </a>
+
+      <a href="week2.html" class="week-card relative overflow-hidden rounded-[15px] py-[35px] px-[45px] transition-all duration-300 ease-in-out cursor-pointer shadow-[0_5px_20px_rgba(0,0,0,0.1)] no-underline flex items-center gap-[25px] hover:translate-x-[10px] hover:shadow-[0_8px_30px_rgba(0,0,0,0.2)] before:content-[''] before:absolute before:left-0 before:top-0 before:w-[6px] before:h-full before:bg-gradient-to-b before:from-[#f093fb] before:to-[#4facfe] md:py-[30px] md:px-[35px] md:gap-[15px]">
+        <div class="font-syne text-[2.5rem] font-extrabold text-[#667eea] min-w-[80px] opacity-40 dark:text-[#4facfe] md:text-[2rem] md:min-w-[60px]">02</div>
+        <div class="week-card-title text-[1.4rem] font-semibold flex-1 md:text-[1.1rem]">Redesign</div>
+      </a>
+
+      <a href="week3.html" class="week-card relative overflow-hidden rounded-[15px] py-[35px] px-[45px] transition-all duration-300 ease-in-out cursor-pointer shadow-[0_5px_20px_rgba(0,0,0,0.1)] no-underline flex items-center gap-[25px] hover:translate-x-[10px] hover:shadow-[0_8px_30px_rgba(0,0,0,0.2)] before:content-[''] before:absolute before:left-0 before:top-0 before:w-[6px] before:h-full before:bg-gradient-to-b before:from-[#f093fb] before:to-[#4facfe] md:py-[30px] md:px-[35px] md:gap-[15px]">
+        <div class="font-syne text-[2.5rem] font-extrabold text-[#667eea] min-w-[80px] opacity-40 dark:text-[#4facfe] md:text-[2rem] md:min-w-[60px]">03</div>
+        <div class="week-card-title text-[1.4rem] font-semibold flex-1 md:text-[1.1rem]">Mid-fidelity prototypes</div>
+      </a>
+
+      <a href="week4.html" class="week-card relative overflow-hidden rounded-[15px] py-[35px] px-[45px] transition-all duration-300 ease-in-out cursor-pointer shadow-[0_5px_20px_rgba(0,0,0,0.1)] no-underline flex items-center gap-[25px] hover:translate-x-[10px] hover:shadow-[0_8px_30px_rgba(0,0,0,0.2)] before:content-[''] before:absolute before:left-0 before:top-0 before:w-[6px] before:h-full before:bg-gradient-to-b before:from-[#f093fb] before:to-[#4facfe] md:py-[30px] md:px-[35px] md:gap-[15px]">
+        <div class="font-syne text-[2.5rem] font-extrabold text-[#667eea] min-w-[80px] opacity-40 dark:text-[#4facfe] md:text-[2rem] md:min-w-[60px]">04</div>
+        <div class="week-card-title text-[1.4rem] font-semibold flex-1 md:text-[1.1rem]">Kleurenstudie</div>
+      </a>
+
+      <a href="week5.html" class="week-card relative overflow-hidden rounded-[15px] py-[35px] px-[45px] transition-all duration-300 ease-in-out cursor-pointer shadow-[0_5px_20px_rgba(0,0,0,0.1)] no-underline flex items-center gap-[25px] hover:translate-x-[10px] hover:shadow-[0_8px_30px_rgba(0,0,0,0.2)] before:content-[''] before:absolute before:left-0 before:top-0 before:w-[6px] before:h-full before:bg-gradient-to-b before:from-[#f093fb] before:to-[#4facfe] md:py-[30px] md:px-[35px] md:gap-[15px]">
+        <div class="font-syne text-[2.5rem] font-extrabold text-[#667eea] min-w-[80px] opacity-40 dark:text-[#4facfe] md:text-[2rem] md:min-w-[60px]">05</div>
+        <div class="week-card-title text-[1.4rem] font-semibold flex-1 md:text-[1.1rem]">HTML</div>
+      </a>
+
+      <a href="week6.html" class="week-card relative overflow-hidden rounded-[15px] py-[35px] px-[45px] transition-all duration-300 ease-in-out cursor-pointer shadow-[0_5px_20px_rgba(0,0,0,0.1)] no-underline flex items-center gap-[25px] hover:translate-x-[10px] hover:shadow-[0_8px_30px_rgba(0,0,0,0.2)] before:content-[''] before:absolute before:left-0 before:top-0 before:w-[6px] before:h-full before:bg-gradient-to-b before:from-[#f093fb] before:to-[#4facfe] md:py-[30px] md:px-[35px] md:gap-[15px]">
+        <div class="font-syne text-[2.5rem] font-extrabold text-[#667eea] min-w-[80px] opacity-40 dark:text-[#4facfe] md:text-[2rem] md:min-w-[60px]">06</div>
+        <div class="week-card-title text-[1.4rem] font-semibold flex-1 md:text-[1.1rem]">Afwerking</div>
+      </a>
+
+      <a href="week7.html" class="week-card relative overflow-hidden rounded-[15px] py-[35px] px-[45px] transition-all duration-300 ease-in-out cursor-pointer shadow-[0_5px_20px_rgba(0,0,0,0.1)] no-underline flex items-center gap-[25px] hover:translate-x-[10px] hover:shadow-[0_8px_30px_rgba(0,0,0,0.2)] before:content-[''] before:absolute before:left-0 before:top-0 before:w-[6px] before:h-full before:bg-gradient-to-b before:from-[#f093fb] before:to-[#4facfe] md:py-[30px] md:px-[35px] md:gap-[15px]">
+        <div class="font-syne text-[2.5rem] font-extrabold text-[#667eea] min-w-[80px] opacity-40 dark:text-[#4facfe] md:text-[2rem] md:min-w-[60px]">07</div>
+        <div class="week-card-title text-[1.4rem] font-semibold flex-1 md:text-[1.1rem]">Examens</div>
+      </a>
+
+      <a href="week8.html" class="week-card relative overflow-hidden rounded-[15px] py-[35px] px-[45px] transition-all duration-300 ease-in-out cursor-pointer shadow-[0_5px_20px_rgba(0,0,0,0.1)] no-underline flex items-center gap-[25px] hover:translate-x-[10px] hover:shadow-[0_8px_30px_rgba(0,0,0,0.2)] before:content-[''] before:absolute before:left-0 before:top-0 before:w-[6px] before:h-full before:bg-gradient-to-b before:from-[#f093fb] before:to-[#4facfe] md:py-[30px] md:px-[35px] md:gap-[15px]">
+        <div class="font-syne text-[2.5rem] font-extrabold text-[#667eea] min-w-[80px] opacity-40 dark:text-[#4facfe] md:text-[2rem] md:min-w-[60px]">08</div>
+        <div class="week-card-title text-[1.4rem] font-semibold flex-1 md:text-[1.1rem]">Telefoon schermen</div>
+      </a>
+
+      <a href="week9.html" class="week-card relative overflow-hidden rounded-[15px] py-[35px] px-[45px] transition-all duration-300 ease-in-out cursor-pointer shadow-[0_5px_20px_rgba(0,0,0,0.1)] no-underline flex items-center gap-[25px] hover:translate-x-[10px] hover:shadow-[0_8px_30px_rgba(0,0,0,0.2)] before:content-[''] before:absolute before:left-0 before:top-0 before:w-[6px] before:h-full before:bg-gradient-to-b before:from-[#f093fb] before:to-[#4facfe] md:py-[30px] md:px-[35px] md:gap-[15px]">
+        <div class="font-syne text-[2.5rem] font-extrabold text-[#667eea] min-w-[80px] opacity-40 dark:text-[#4facfe] md:text-[2rem] md:min-w-[60px]">09</div>
+        <div class="week-card-title text-[1.4rem] font-semibold flex-1 md:text-[1.1rem]">Interactieve schermen & Tailwind</div>
+      </a>
+
+      <a href="week10.html" class="week-card relative overflow-hidden rounded-[15px] py-[35px] px-[45px] transition-all duration-300 ease-in-out cursor-pointer shadow-[0_5px_20px_rgba(0,0,0,0.1)] no-underline flex items-center gap-[25px] hover:translate-x-[10px] hover:shadow-[0_8px_30px_rgba(0,0,0,0.2)] before:content-[''] before:absolute before:left-0 before:top-0 before:w-[6px] before:h-full before:bg-gradient-to-b before:from-[#f093fb] before:to-[#4facfe] md:py-[30px] md:px-[35px] md:gap-[15px]">
+        <div class="font-syne text-[2.5rem] font-extrabold text-[#667eea] min-w-[80px] opacity-40 dark:text-[#4facfe] md:text-[2rem] md:min-w-[60px]">10</div>
+        <div class="week-card-title text-[1.4rem] font-semibold flex-1 md:text-[1.1rem]">Verdere uitwerking van website en Figma</div>
+      </a>
+
+      <a href="week11.html" class="week-card relative overflow-hidden rounded-[15px] py-[35px] px-[45px] transition-all duration-300 ease-in-out cursor-pointer shadow-[0_5px_20px_rgba(0,0,0,0.1)] no-underline flex items-center gap-[25px] hover:translate-x-[10px] hover:shadow-[0_8px_30px_rgba(0,0,0,0.2)] before:content-[''] before:absolute before:left-0 before:top-0 before:w-[6px] before:h-full before:bg-gradient-to-b before:from-[#f093fb] before:to-[#4facfe] md:py-[30px] md:px-[35px] md:gap-[15px]">
+        <div class="font-syne text-[2.5rem] font-extrabold text-[#667eea] min-w-[80px] opacity-40 dark:text-[#4facfe] md:text-[2rem] md:min-w-[60px]">11</div>
+        <div class="week-card-title text-[1.4rem] font-semibold flex-1 md:text-[1.1rem]">Werkmoment</div>
+      </a>
+
+      <a href="week12.html" class="week-card relative overflow-hidden rounded-[15px] py-[35px] px-[45px] transition-all duration-300 ease-in-out cursor-pointer shadow-[0_5px_20px_rgba(0,0,0,0.1)] no-underline flex items-center gap-[25px] hover:translate-x-[10px] hover:shadow-[0_8px_30px_rgba(0,0,0,0.2)] before:content-[''] before:absolute before:left-0 before:top-0 before:w-[6px] before:h-full before:bg-gradient-to-b before:from-[#f093fb] before:to-[#4facfe] md:py-[30px] md:px-[35px] md:gap-[15px]">
+        <div class="font-syne text-[2.5rem] font-extrabold text-[#667eea] min-w-[80px] opacity-40 dark:text-[#4facfe] md:text-[2rem] md:min-w-[60px]">12</div>
+        <div class="week-card-title text-[1.4rem] font-semibold flex-1 md:text-[1.1rem]">Werkmoment</div>
+      </a>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="text-center text-white/80 py-10 px-5 text-[0.9rem]">
+      <p>© 2025 – Lost in Tra(i)nslation<br>
+      Designed & developed by <strong>Florence Daelman - GDM 2</strong></p>
+    </div>
+  </div>
+
+  <script>
+    function toggleTheme() {
+      document.documentElement.classList.toggle('dark');
+      const isDark = document.documentElement.classList.contains('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      document.querySelector('button').textContent = isDark ? '☀️' : '🌙';
+    }
+
+    (function() {
+      const theme = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (theme === 'dark' || (!theme && prefersDark)) {
+        document.documentElement.classList.add('dark');
+        document.querySelector('button').textContent = '☀️';
+      }
+    })();
+  </script>
+</body>
+</html>
